@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 5px;
+}
+
+.cuadrado {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+}
