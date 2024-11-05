@@ -13,6 +13,6 @@ function crearCuadrado() {
 }
 
 // Crear 100 cuadrados (ajusta este número según tu diseño)
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 25; i++) {
     crearCuadrado();
 }
