@@ -3,11 +3,13 @@ body {
     font-family: sans-serif;
 }
 
+
 #tablero {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 5px;
 }
+
 
 .cuadrado {
     width: 30px;
