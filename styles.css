@@ -1,8 +1,8 @@
 body {
+    background-color: #333; /* Gris oscuro */
     text-align: center;
     font-family: sans-serif;
 }
-
 
 #tablero {
     display: grid;
@@ -10,11 +10,16 @@ body {
     grid-gap: 5px;
 }
 
-
 .cuadrado {
     width: 30px;
     height: 30px;
     border: 1px solid black;
     text-align: center;
     font-size: 20px;
+    background-color: #ccc; /* Gris claro */
+    color: black;
+}
+
+#title, #firma {
+    color: white; /* Color de contraste para el título y la firma */
 }
