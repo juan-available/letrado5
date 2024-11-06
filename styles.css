@@ -1,13 +1,14 @@
-body {
-    background-color: #333; /* Gris oscuro */
-    text-align: center;
-    font-family: sans-serif;
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #333; /* Gris oscuro */
+    text-align: center;
+    font-family: sans-serif;
 }
 
 #tablero {
