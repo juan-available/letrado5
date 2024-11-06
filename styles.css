@@ -13,18 +13,18 @@ body {
 
 #tablero {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
-    grid-column-gap: 2px
+    grid-template-columns: repeat(5, 0fr);
+    grid-gap: 1px;
+    margin: 0 auto;
 }
 
 .cuadrado {
     width: 40px;
     height: 40px;
-    border: 1px solid black;
+    border: 2px solid black;
     text-align: center;
     font-size: 18px;
-    background-color: #ccc; /* Gris claro */
+    background-color: #cccccc6f; /* Gris claro */
     color: black;
 }
 
