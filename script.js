@@ -1,33 +1,24 @@
 const tablero = document.getElementById('tablero');
-const title = document.getElementById('title');
-
-// Array para almacenar los cuadrados
-const cuadrados = [];
 
 // Función para crear un cuadrado
 function crearCuadrado() {
     const cuadrado = document.createElement('div');
     cuadrado.classList.add('cuadrado');
-    cuadrados.push(cuadrado);
+    cuadrado.setAttribute('contenteditable', 'true');
 
-    // Evento click para convertir a mayúsculas
-    cuadrado.addEventListener('click', () => {
-        cuadrado.textContent = cuadrado.textContent.toUpperCase();
-    });
+    cuadrado.addEventListener('input', () => {
+        // Convertir el texto a mayúsculas y limitar a un carácter
+        const texto = cuadrado.textContent.toUpperCase().replace(/[^A-Z]/g, '');
+        cuadrado.textContent = texto.charAt(0);
 
-    // Evento keydown para capturar la entrada del usuario y pasar al siguiente cuadrado
-    cuadrado.addEventListener('keydown', (event) => {
-        if (event.key.match(/[A-Z]/)) {
-            cuadrado.textContent = event.key.toUpperCase();
+        // Encontrar el siguiente cuadrado
+        const cuadrados = tablero.querySelectorAll('.cuadrado');
+        const indiceActual = Array.from(cuadrados).indexOf(cuadrado);
+        const siguienteIndice = indiceActual + 1;
 
-            // Obtener el índice del cuadrado actual y calcular el siguiente
-            const indiceActual = cuadrados.indexOf(cuadrado);
-            const siguienteIndice = indiceActual + 1;
-
-            // Si hay un siguiente cuadrado, enfócalo
-            if (siguienteIndice < cuadrados.length) {
-                cuadrados[siguienteIndice].focus();
-            }
+        // Si hay un siguiente cuadrado, enfócalo
+        if (siguienteIndice < cuadrados.length) {
+            cuadrados[siguienteIndice].focus();
         }
     });
 
@@ -38,26 +29,3 @@ function crearCuadrado() {
 for (let i = 0; i < 25; i++) {
     crearCuadrado();
 }
-
-
-cuadrados.forEach(cuadrado => {
-  cuadrado.addEventListener('input', () => {
-    // Convertir a mayúsculas y filtrar solo letras
-    const texto = cuadrado.textContent.toUpperCase().replace(/[^A-Z]/g, '');
-    cuadrado.textContent = texto;
-
-    // Limitar a un solo carácter
-    if (texto.length > 1) {
-      cuadrado.textContent = texto.charAt(0);
-    }
-
-    // Encontrar el siguiente cuadrado
-    const indiceActual = Array.from(cuadrados).indexOf(cuadrado);
-    const siguienteIndice = indiceActual + 1;
-
-    // Si hay un siguiente cuadrado, enfócalo
-    if (siguienteIndice < cuadrados.length) {
-      cuadrados[siguienteIndice].focus();
-    }
-  });
-});
