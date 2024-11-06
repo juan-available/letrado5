@@ -7,7 +7,7 @@ body {
 #tablero {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 15px;
+    grid-gap: 1px;
 }
 
 .cuadrado {
