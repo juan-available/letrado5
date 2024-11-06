@@ -38,7 +38,7 @@ function crearCuadrado() {
 for (let i = 0; i < 25; i++) {
     crearCuadrado();
 }
-const cuadrados = document.querySelectorAll('.cuadrado');
+
 
 cuadrados.forEach(cuadrado => {
   cuadrado.addEventListener('input', () => {
