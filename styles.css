@@ -20,6 +20,14 @@ body {
     color: black;
 }
 
-#title, #firma {
-    color: white; /* Color de contraste para el título y la firma */
+#title {
+    color: red;
+}
+
+#firma {
+    color: orange;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px; /* Añade un margen para separarlo del borde */
 }
