@@ -19,22 +19,23 @@ body {
 }
 
 .cuadrado {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #ccc; /* Gris claro */
     color: black;
 }
 
 #title {
-    color: #C70039;
+    color: #a02929;
+
 }
 
 #firma {
     color: DarkOrange;
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
 }
