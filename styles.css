@@ -9,12 +9,17 @@ body {
     background-color: #333; /* Gris oscuro */
     text-align: center;
     font-family: sans-serif;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 #tablero {
     display: grid;
-    grid-template-columns: repeat(5, 0fr);
-    grid-gap: 1px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
 }
 
 .cuadrado {
@@ -44,4 +49,12 @@ font-family: Montserrat, monospace; /* Tipo de fuente */
     bottom: 0px;
     right: 0px;
     font-weight: bold;
+    text-align: center; /* Centra el texto de la firma */
 }
+
+
+@media (max-width: 768px) {
+  /* Estilos para pantallas menores a 768px */
+  .container {
+    width: 90%;
+  }
