@@ -29,3 +29,15 @@ function crearCuadrado() {
 for (let i = 0; i < 25; i++) {
     crearCuadrado();
 }
+
+// Ocultar celdas
+const cuadrados = document.querySelectorAll('.cuadrado');
+cuadrados[6].classList.add('oculto');
+cuadrados[7].classList.add('oculto');
+cuadrados[8].classList.add('oculto');
+cuadrados[11].classList.add('oculto');
+cuadrados[12].classList.add('oculto');
+cuadrados[13].classList.add('oculto');
+cuadrados[16].classList.add('oculto');
+cuadrados[17].classList.add('oculto');
+cuadrados[18].classList.add('oculto');
