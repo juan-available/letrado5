@@ -1,60 +1,43 @@
+const tablero = document.getElementById('tablero');
 
-* {
-    margin: 10px;
-    padding: 10px;
-    box-sizing: border-box;
+// Función para crear un cuadrado
+function crearCuadrado() {
+    const cuadrado = document.createElement('div');
+    cuadrado.classList.add('cuadrado');
+    cuadrado.setAttribute('contenteditable', 'true');
+
+    cuadrado.addEventListener('input', () => {
+        // Convertir el texto a mayúsculas y limitar a un carácter
+        const texto = cuadrado.textContent.toUpperCase().replace(/[^A-Z]/g, '');
+        cuadrado.textContent = texto.charAt(0);
+
+        // Encontrar el siguiente cuadrado
+        const cuadrados = tablero.querySelectorAll('.cuadrado');
+        const indiceActual = Array.from(cuadrados).indexOf(cuadrado);
+        const siguienteIndice = indiceActual + 1;
+
+        // Si hay un siguiente cuadrado, enfócalo
+        if (siguienteIndice < cuadrados.length) {
+            cuadrados[siguienteIndice].focus();
+        }
+    });
+
+    tablero.appendChild(cuadrado);
 }
 
-body {
-    background-color: #333; /* Gris oscuro */
-    text-align: center;
-    font-family: sans-serif;
-      display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+// Crear 25 cuadrados en una cuadrícula de 5x5
+for (let i = 0; i < 25; i++) {
+    crearCuadrado();
 }
 
-#tablero {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-}
-
-.cuadrado {
-    margin: 0 auto;
-    width: 40px;
-    height: 40px;
-    border: 2px solid black;
-    text-align: center;
-    font-size: 18px;
-    background-color: #cccccc6f; /* Gris claro */
-    color: black;
-}
-
-#title {
-    color: #710e0e;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: #877207;
-font-family: Montserrat, monospace; /* Tipo de fuente */
-  font-size: 3rem; /* Ajusta el tamaño de la letra */
-
-}
-
-
-#firma {
-    color: DarkOrange;
-    position: relative;
-    bottom: 0px;
-    right: 0px;
-    font-weight: bold;
-    text-align: center; /* Centra el texto de la firma */
-}
-
-
-@media (max-width: 768px) {
-  /* Estilos para pantallas menores a 768px */
-  .container {
-    width: 90%;
-  }
+// Ocultar celdas
+const cuadrados = document.querySelectorAll('.cuadrado');
+cuadrados[6].classList.add('oculto');
+cuadrados[7].classList.add('oculto');
+cuadrados[8].classList.add('oculto');
+cuadrados[11].classList.add('oculto');
+cuadrados[12].classList.add('oculto');
+cuadrados[13].classList.add('oculto');
+cuadrados[16].classList.add('oculto');
+cuadrados[17].classList.add('oculto');
+cuadrados[18].classList.add('oculto');
