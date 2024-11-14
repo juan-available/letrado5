@@ -1,3 +1,4 @@
+
 * {
     margin: 10px;
     padding: 10px;
@@ -61,5 +62,5 @@ font-family: Montserrat, monospace; /* Tipo de fuente */
   .oculto {
   opacity: 0;
   pointer-events: none;
+  user-select: none;
 }
-
